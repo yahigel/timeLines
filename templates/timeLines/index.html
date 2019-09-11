@@ -1,0 +1,27 @@
+{% extends 'timeLines/base.html' %}
+{% block content %}
+<h1>年表作成丸</h1>
+<h8>Wikipediaから情報を抽出し、検索ワードに基づく年表を作成します。</h8>
+<form action="{% url 'timeLines:create' %}" method="post">
+    <div class="col-sm-6">
+        {{ form }}
+        {% csrf_token %}
+    <h8>※項目数には500以下の数値を入力してください。</h8>
+    </div>
+    <button id="createButton" disabled>Create</button>
+</form>
+
+<h2>▼▼▼▼出力結果▼▼▼▼</h2>
+<table class="table table-sfriped todo-table">
+    <tbody>
+        {% for dekigoto in resultList %}
+            <tr class="dekigoto fade_off">
+                <td>
+                    <div>{{ dekigoto }}</div>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<h2>▲▲▲▲▲▲▲▲▲▲▲▲</h2>
+{% endblock %}

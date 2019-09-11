@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head prefix="og: https://ya-hi-gel-1.paiza-user.cloud:8000/timeLines# website: https://ya-hi-gel-1.paiza-user.cloud:8000/timeLines#">
+        <title>年表作成丸 無料年表作成サービス</title>
+        <meta name="description" content="年表作成丸は希望する項目数の年表作成サービスです。研究資料作成にご使用ください。"/>
+        <meta property="og:title" content="年表作成丸 年表作成サービス"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:image" content="https://www.pakutaso.com/shared/img/thumb/ELL75_yousyohondana20120620_TP_V.jpg"/>
+        <meta property="og:description" content="年表作成丸は希望する項目数の年表作成サービスです。研究資料作成にご使用ください。"/>
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'timeLines/design.css' %}">
+        <script src="//code.jquery.com/jquery-1.12.1.min.js"></script>
+        <script src="{% static 'timeLines/validation.js' %}"></script>
+</head>
+    <body>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <p id="page-top"><a href="#wrap">PAGE TOP</a></p>
+    </body>
+</html>
